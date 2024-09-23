@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <style>
+      /* 自定义样式 */
+      #logoutButton {
+        font-size: 1.5em; /* 放大按钮 */
+        background-color: gray; /* 灰色背景 */
+        color: white; /* 白色文字 */
+        position: absolute; /* 绝对定位 */
+        right: 20px; /* 靠右 */
+        top: 20px; /* 距离顶部 */
+        border-radius: 10px; /* 圆角 */
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <strong
+        >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
+        properly without JavaScript enabled. Please enable it to
+        continue.</strong
+      >
+    </noscript>
+
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <button
+      id="logoutButton"
+      class="btn btn-danger"
+      onclick="window.location.href='http://localhost:8081/'"
+    >
+      主页
+    </button>
+  </body>
+</html>
