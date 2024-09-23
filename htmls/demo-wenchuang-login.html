@@ -300,7 +300,11 @@
               .then((response) => {
                 console.log("login success", response);
                 this.userid = response.data.userid;
+                this.username = response.data.username;
                 this.usertype = response.data.usertype;
+                localStorage.setItem("userid", this.userid);
+                localStorage.setItem("username", this.username);
+                localStorage.setItem("usertype", this.usertype);
               })
               .catch((error) => {
                 console.error("login failed", error);
