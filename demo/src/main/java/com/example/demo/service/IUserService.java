@@ -12,5 +12,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2024-09-12
  */
 public interface IUserService extends IService<User> {
+    User getUsernameAndPassword(String username, String password);
 
 }

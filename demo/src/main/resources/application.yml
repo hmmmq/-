@@ -13,7 +13,7 @@ spring:
     password: 123
 
 mybatis-plus:
-  mapper-locations: classpath*:mapper/*.xml
+  mapper-locations: classpath*:com/example/mapper/xml/*.xml
   # 实体扫描，多个 package 用逗号或者分号分隔
   typeAliasesPackage: com.example.demo.entity
   global-config:

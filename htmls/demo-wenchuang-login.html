@@ -186,7 +186,8 @@
                   method="post"
                   @submit.prevent="login"
                 >
-                  <h3 class="text-center fs-5 font-body">登录你的账户</h3>
+                  <h3 class="text-center fs-5 font-body" v-if="!isRegistered">登录你的账户</h3>
+                  <h3 class="text-center fs-5 font-body" v-else>注册新账户</h3>
 
                   <div class="row">
                     <div class="col-12 form-group">
@@ -219,12 +220,32 @@
                         id="login-form-submit"
                         name="login-form-submit"
                         value="login"
+                        v-if="!isRegistered"
                       >
                         登录
                       </button>
-                      <a href="#" class="text-smaller mt-1 d-block"
-                        >忘记密码?</a
+                      <button
+                        class="button text-light m-0 w-100"
+                        id="login-form-submit"
+                        name="login-form-submit"
+                        value="register"
+                        v-else
                       >
+                        注册
+                      </button>
+                      <a
+                        href="#"
+                        class="text-smaller mt-1 d-block"
+                        @click.prevent="isRegistered = true"
+                        v-if="!isRegistered"
+                        >没有账户?</a
+                      >
+                      <a
+                        href="#"
+                        class="text-smaller mt-1 d-block"
+                        @click.prevent="isRegistered = false"
+                        v-else
+                        >已有账户?</a
                     </div>
                   </div>
                 </form>
@@ -276,6 +297,7 @@
             password: "",
             userid: null,
             usertype: null,
+            isRegistered: false,
           };
         },
         methods: {
@@ -290,12 +312,13 @@
                 console.error("请求失败", error);
               });
           },
-          login() {
+          login(event) {
             console.log("login");
+            const url = this.isRegistered ? "http://localhost:8086/register": "http://localhost:8086/login";
             axios
-              .post("http://localhost:8086/login", {
+              .post(url, {
                 username: this.username,
-                password: this.password,
+                userPassword: this.password,
               })
               .then((response) => {
                 console.log("login success", response);
