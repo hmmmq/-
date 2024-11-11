@@ -19,45 +19,47 @@ import java.util.List;
 @RestController
 @RequestMapping("/user")
 public class UserController {
+
     @Autowired
     private IUserService userService;
 
-    // Create a new user
-    @PostMapping
-    public User createUser(@RequestBody User user) {
-
-        userService.save(user);
-        return user;
+    @PostMapping("/login")
+    public User login(@RequestBody User user) {
+        User userById = getUserById(user.getUserId());
+        if (userById != null && userById.getUserPassword().equals(user.getUserPassword())) {
+            return userById;
+        }else {
+            return null;
+        }
     }
 
-    // Retrieve a user by ID
+    // Create a new user
+    @PostMapping
+    public boolean createUser(@RequestBody User user) {
+        return userService.save(user);
+    }
+
+    // Get a user by ID
     @GetMapping("/{id}")
     public User getUserById(@PathVariable Integer id) {
         return userService.getById(id);
     }
 
-    // Retrieve all users
+    // Get all users
     @GetMapping
     public List<User> getAllUsers() {
         return userService.list();
     }
 
-    // Update a user by ID
+    // Update an existing user
     @PutMapping("/{id}")
-    public User updateUser(@PathVariable Integer id, @RequestBody User user) {
-        user.setUserId(id);
-        userService.updateById(user);
-        return user;
+    public boolean updateUser(@PathVariable Integer id, @RequestBody User user) {
+        return userService.updateById(user);
     }
 
     // Delete a user by ID
     @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable Integer id) {
-        userService.removeById(id);
-    }
-
-    @PostMapping("/login")
-    public User getUsernameAndPassword(@RequestBody User user) {
-        return userService.getUsernameAndPassword(user.getUsername(), user.getUserPassword());
+    public boolean deleteUser(@PathVariable Integer id) {
+        return userService.removeById(id);
     }
 }

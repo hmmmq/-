@@ -10,7 +10,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/culturalcreativemalldb?useSSL=false&serverTimezone=UTC
     username: root
-    password: 123
+    password: 12345678
 
 mybatis-plus:
   mapper-locations: classpath*:com/example/mapper/xml/*.xml

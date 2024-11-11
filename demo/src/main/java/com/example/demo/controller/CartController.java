@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+
 import com.example.demo.entity.Cart;
 import com.example.demo.service.ICartService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,29 +15,46 @@ public class CartController {
     @Autowired
     private ICartService cartService;
 
-    @GetMapping
-    public List<Cart> getAllCarts() {
-        return cartService.list();
+    // Create a new cart
+    @PostMapping
+    public boolean createCart(@RequestBody Cart cart) {
+        Cart temp  = getCartById(cart.getCartId());
+        if (temp != null) {
+            return false;
+        }
+
+        return cartService.save(cart);
     }
 
+    // Get a cart by ID
     @GetMapping("/{id}")
     public Cart getCartById(@PathVariable Integer id) {
         return cartService.getById(id);
     }
 
-    @PostMapping
-    public boolean createCart(@RequestBody Cart cart) {
-        return cartService.save(cart);
+    // Get all carts
+    @GetMapping
+    public List<Cart> getAllCarts() {
+        return cartService.list();
     }
 
+    @GetMapping("/user/{id}")
+    public List<Cart> getUserAllCarts(@PathVariable Integer id) {
+        List<Cart> carts = getAllCarts();
+        carts.removeIf(cart -> !cart.getUserId().equals(id));
+        return carts;
+    }
+
+    // Update an existing cart
     @PutMapping("/{id}")
-    public Cart updateCart(@PathVariable Integer id, @RequestBody Cart cart) {
+    public boolean updateCart(@PathVariable Integer id, @RequestBody Cart cart) {
         cart.setCartId(id);
-        return cartService.update(cart);
+        return cartService.updateById(cart);
     }
 
+    // Delete a cart by ID
     @DeleteMapping("/{id}")
-    public void deleteCart(@PathVariable Long id) {
-        cartService.deleteById(id);
+    public boolean deleteCart(@PathVariable Integer id) {
+        return cartService.removeById(id);
     }
 }
