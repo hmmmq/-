@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="x-ua-compatible" content="IE=edge" />
+  <meta name="author" content="SemiColonWeb" />
+  <meta name="description"
+    content="Create Skincare Store &amp; Beauty Products Websites with Canvas Template. Get Canvas to build powerful websites easily with the Highly Customizable &amp; Best Selling Bootstrap Template, today." />
+
+  <!-- Font Imports -->
+  <link rel="stylesheet" href="https://use.typekit.net/aay8rzy.css" />
+
+  <!-- Core Style -->
+  <link rel="stylesheet" href="http://127.0.0.1:8082/style.css" />
+
+  <!-- Font Icons -->
+  <link rel="stylesheet" href="http://127.0.0.1:8082/css/font-icons.css" />
+
+  <!-- Plugins/Components CSS -->
+  <link rel="stylesheet" href="http://127.0.0.1:8082/css/swiper.css" />
+  <link rel="stylesheet" href="http://127.0.0.1:8082/css/components/ion.rangeslider.css" />
+
+  <!-- Niche Demos -->
+  <link rel="stylesheet" href="http://127.0.0.1:8082/demos/skincare/skincare.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="http://127.0.0.1:8082/css/custom.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Document Title
+	============================================= -->
+  <title>Products - Demo Skincare | Canvas</title>
+</head>
+
+<body class="stretched">
+  <!-- Document Wrapper
+	============================================= -->
+  <div id="wrapper">
+    <!-- Top Bar
+		============================================= -->
+
+    <!-- Header
+		============================================= -->
+    <header id="header" class="header-size-sm" data-sticky-shrink="false" style="border-color: var(--cnvs-color)">
+      <div class="container">
+        <div class="header-row justify-content-lg-between">
+          <nav class="primary-menu top-primary-menu col-lg-5 order-last order-lg-first mobile-menu-off-canvas">
+            <ul class="menu-container">
+              <li class="menu-item">
+                <a class="menu-link" href="demo-wenchuang.html">
+                  <div>主页</div>
+                </a>
+              </li>
+              <li class="menu-item current">
+                <a class="menu-link" href="demo-wenchuang-shop.html">
+                  <div>产品</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a class="menu-link" href="demo-wenchuang-cart.html">
+                  <div>购物车</div>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <!-- #primary-menu end -->
+
+          <!-- Logo
+					============================================= -->
+          <div id="logo" class="mx-lg-auto col-lg-2 justify-content-center">
+            <a class="color fst-italic" href="#">文创商城</a>
+          </div>
+          <!-- #logo end -->
+
+          <div class="col-lg-5 d-flex justify-content-end">
+            <div class="header-misc">
+              <!-- #primary-menu end -->
+
+              <div class="primary-menu-trigger" data-target=".top-primary-menu">
+                <button class="cnvs-hamburger" type="button" title="Open Mobile Menu">
+                  <span class="cnvs-hamburger-box"><span class="cnvs-hamburger-inner"></span></span>
+                </button>
+              </div>
+
+              <!-- Top Account
+							============================================= -->
+              <div class="header-misc-icon me-lg-4">
+                <a href="demo-wenchuang-login.html"><i class="bi-person-circle"></i></a>
+              </div>
+              <!-- top-Account end -->
+
+              <!-- Top Cart
+							============================================= -->
+              <div id="top-cart" class="header-misc-icon me-lg-4">
+                <a href="#" id="top-cart-trigger"><i class="bi-basket"></i></a>
+
+              </div>
+              <!-- #top-cart end -->
+
+              <!-- Top Search
+							============================================= -->
+              <div id="top-search" class="header-misc-icon">
+                <a href="#" id="top-search-trigger"><i class="uil uil-search"></i><i class="bi-x-lg"></i></a>
+              </div>
+              <!-- #top-search end -->
+            </div>
+          </div>
+
+          <form class="top-search-form" action="search.html" method="get">
+            <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter.."
+              autocomplete="off" />
+          </form>
+        </div>
+      </div>
+
+      <div id="header-wrap">
+        <div class="container">
+          <div class="header-row">
+            <div class="primary-menu-trigger justify-content-start" data-target=".main-primary-menu">
+              <button class="cnvs-hamburger" type="button" title="Open Mobile Menu">
+                <span class="cnvs-hamburger-box"><span class="cnvs-hamburger-inner"></span></span>
+              </button>
+            </div>
+
+            <!-- #primary-menu end -->
+          </div>
+        </div>
+      </div>
+      <div class="header-wrap-clone"></div>
+    </header>
+    <!-- #header end -->
+
+    <!-- Page Title
+		============================================= -->
+    <section class="page-title page-title-parallax parallax scroll-detect py-lg-6">
+      <img src="http://127.0.0.1:8082/demos/skincare/images/shop-page/page-title.jpg" class="parallax-bg" />
+      <div class="container">
+        <div class="page-title-row py-5">
+          <div class="page-title-content mw-xs" style="-webkit-text-stroke: 0.5px #fff">
+            <h1>文创商城</h1>
+            <p class="color text-larger mt-4 mb-0">
+              体验川蜀魅力，感受千年文化。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- .page-title end -->
+
+    <!-- Content
+		============================================= -->
+    <section id="content">
+      <div class="content-wrap pb-0">
+        <div class="container">
+
+
+          <div class="row">
+            <div class="col-md-3 skincare-filter sticky-sidebar-wrap">
+              <h5 class="h6 font-body fw-normal">商品类别</h5>
+              <hr />
+              <ul
+                class="pt-4 list-unstyled position-relative ist-unstyled items-nav shop-filter custom-filter font-body"
+                data-container="#shop" data-active-class="active-filter">
+                <li class="widget-filter-reset active-filter">
+                  <a href="#" class="text-danger" data-filter="*">Clear</a>
+                </li>
+                <li class="mb-1 d-flex justify-content-between align-items-center" v-for="category in uniqueCategories"
+                  :key="category">
+                  <a href="#" :data-filter="`.${category}`">{{ category }}</a>
+                  <div class="shop-filter-count"></div>
+                </li>
+
+
+
+              </ul>
+
+              <hr class="my-5" />
+
+              <!-- <div class="d-flex align-items-center mt-5">
+                <h5 class="mb-0 h6 font-body fw-normal">按照价格区间筛选</h5>
+                <div class="d-flex text-smaller ms-auto op-07">
+                  <div class="price-range-from"></div>
+                  <span class="mx-1"> - </span>
+                  <div class="price-range-to"></div>
+                </div>
+              </div> -->
+              <!-- 一个价格区间条,可以拖动来调整价格范围 -->
+
+              <!-- 测试 -->
+              <!-- <div class="d-flex align-items-center mt-5">
+                <h5 class="mb-0 h6 font-body fw-normal">按照价格区间筛选</h5>
+                <div class="d-flex text-smaller ms-auto op-07">
+                  <div class="price-range-from">¥{{ minPrice }}</div>
+                  <span class="mx-1"> - </span>
+                  <div class="price-range-to">¥{{ maxPrice }}</div>
+                </div>
+              </div> -->
+              <!-- Price Range Slider -->
+              <!-- <div class="price-slider">
+                <input type="range" v-model="minPrice" :min="minRange" :max="maxRange" :step="step"
+                  class="price-range-slider" />
+                <input type="range" v-model="maxPrice" :min="minRange" :max="maxRange" :step="step"
+                  class="price-range-slider" />
+              </div> -->
+            </div>
+
+            <div class="col-md-9">
+              <div id="shop" class="row shop grid-container" data-layout="fitRows">
+
+                <!-- test -->
+                <div class="col-lg-4 col-md-6 mb-4 product sf-face sf-lips" v-for="product in productlist"
+                  :key="product.productId">
+                  <div class="grid-inner">
+                    <div class="product-image">
+                      <a :href="'demo-wenchuang-single.html?id=' + product.productId">
+                        <img :src="'http://localhost:8086/image/'+product.imagePath" :alt="product.productName" />
+                      </a>
+                      <div class="sale-flash badge bg-color rounded-0 fw-normal p-2" v-if="product.discountPrice">
+                        {{ product.price - product.discountPrice }}元 折扣*
+                      </div>
+                      <div class="bg-overlay">
+                        <div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
+                          <a href="#"
+                            class="d-block position-absolute top-0 start-0 w-100 h-100 z-1"
+                            @click="saveProductIdAndRedirect(product)">
+                            <span class="visually-hidden">Product Link</span>
+                          </a>
+                          <a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2">
+                            <i class="bi-basket"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product-desc text-center">
+                      <div class="product-title">
+                        <h3>
+                          <a :href="'demo-wenchuang-single.html?id=' + product.productId" class="color">{{
+                            product.productName }}</a>
+                        </h3>
+                      </div>
+                      <div class="product-price fw-normal mt-0 mb-0">
+                        <del class="op-07">¥{{ product.price }}</del> <ins>¥{{ product.discountPrice }} </ins>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Section Ticker
+				============================================= -->
+        <div class="py-4 bg-color my-3">
+          <div class="ticker-wrap pause-on-hover">
+            <div class="ticker">
+              <template v-for="index in 20">
+                <a href="#" class="ticker-item">开始购物吧!</p>
+                </a <a href="demo-wenchuang-single.html" class="ticker-item">
+                <span class="text-white op-01">&#9670;</span>
+                </a>
+              </template>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- #content end -->
+
+    <!-- Footer
+		============================================= -->
+  </div>
+  <!-- #wrapper end -->
+
+  <!-- Go To Top
+	============================================= -->
+  <div id="gotoTop" class="uil uil-angle-up"></div>
+
+  <!-- JavaScripts
+	============================================= -->
+  <script src="http://127.0.0.1:8082/js/plugins.min.js"></script>
+
+  <!-- Range Slider Plugin -->
+  <script src="http://127.0.0.1:8082/js/components/rangeslider.min.js"></script>
+  <script src="http://127.0.0.1:8082/js/functions.bundle.js"></script>
+
+
+  <!-- 引入 Vue 和 Axios -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    // Vue 3 中使用 createApp 方法创建应用实例
+    const app = Vue.createApp({
+      data() {
+        return {
+          productlist: [], // 初始化为空数组
+          filterVisible: false,  // Initially filter is hidden
+
+        };
+      },
+      computed: {
+        uniqueCategories() {
+          // Extract unique categories from the productlist
+          const categories = this.productlist.map(product => product.category);
+          return [...new Set(categories)]; // Remove duplicates
+        }
+      },
+      mounted() {
+        console.log("mounted");
+        this.fetchData();
+      },
+      methods: {
+        saveProductIdAndRedirect(product) {
+          // Save the productId to localStorage
+          localStorage.setItem('selectedProduct', JSON.stringify(product));
+          console.log(product);
+
+          // Redirect to the single product page
+          window.location.href = 'demo-wenchuang-single.html';
+        },
+        toggleFilterVisibility() {
+          // Toggle the visibility of the filter section
+          this.filterVisible = !this.filterVisible;
+        },
+        async fetchData() {
+          try {
+            const res = await axios.get('http://localhost:8086/product/');
+            if (res != null) {
+              console.log('http://localhost:8086/product/');
+              console.log(res);
+              this.productlist = res.data;
+              console.log(res.data);
+              console.log(this.productlist);
+            }
+          } catch (err) {
+            console.error(err);
+          }
+        },
+        otherMethods() {
+
+
+
+        },
+      },
+    });
+
+    // 挂载到 DOM 元素上
+    app.mount("#wrapper");
+  </script>
+</body>
+
+</html>
