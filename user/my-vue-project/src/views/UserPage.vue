@@ -1,17 +1,19 @@
 <template>
-
+ <div id="wrapper">
+    <TopHeader></TopHeader>
+ </div>
 
 </template>
 <script scoped>
-
+import TopHeader from '../components/TopHeader.vue';
 export default {
     components: {
-       
+        TopHeader
        
     },
     data() {
         return {
-            currentComponent: 'WelcomePanel'
+            currentComponent: ''
         }
     },
     name: 'UserPage',
