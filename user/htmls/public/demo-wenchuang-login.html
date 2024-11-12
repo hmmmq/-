@@ -62,6 +62,11 @@
                   <div>购物车</div>
                 </a>
               </li>
+              <li class="menu-item">
+                <a class="menu-link" href="demo-wenchuang-checkout.html">
+                  <div>订单</div>
+                </a>
+              </li>
             </ul>
           </nav>
           <!-- #primary-menu end -->
@@ -107,8 +112,7 @@
           </div>
 
           <form class="top-search-form" action="search.html" method="get">
-            <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter.."
-              autocomplete="off" />
+            <input type="text" name="q" class="form-control" placeholder="Type &amp; Hit Enter.." autocomplete="off" />
           </form>
         </div>
       </div>
@@ -132,38 +136,38 @@
 
     <!-- Content
 		============================================= -->
-    <section id="content" v-if="user.username == null">
+    <section id="content" v-if="user.username == ''">
       <div class="content-wrap">
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-md-3">
-              <form >
+              <form>
                 <h3 class="text-center fs-5 font-body" v-if="!isRegistered">登录你的账户</h3>
                 <h3 class="text-center fs-5 font-body" v-else>注册新账户</h3>
 
                 <div class="row">
                   <div class="col-12 form-group">
-                    <input type="text" id="login-form-userId" name="login-form-userId" value="" placeholder="用户ID"
+                    <input type="text" id="login-form-userId" name="login-form-userId" placeholder="用户ID"
                       class="form-control rounded-0 bg-color-2" v-model="user.userId" />
                   </div>
                   <div class="col-12 form-group" v-if="isRegistered">
-                    <input type="text" id="login-form-userId" name="login-form-userId" value="" placeholder="用户名"
+                    <input type="text" id="login-form-userId" name="login-form-userId" placeholder="用户名"
                       class="form-control rounded-0 bg-color-2" v-model="user.username" />
                   </div>
 
 
                   <div class="col-12 form-group">
-                    <input type="password" id="login-form-password" name="login-form-password" value="" placeholder="密码"
+                    <input type="password" id="login-form-password" name="login-form-password" placeholder="密码"
                       class="form-control rounded-0 bg-color-2" v-model="user.userPassword" />
                   </div>
 
                   <div class="col-12 form-group text-center">
                     <button class="button text-light m-0 w-100" id="login-form-submit" name="login-form-submit"
-                      value="login" v-if="!isRegistered">
+                      type="button" @click="login" v-if="!isRegistered">
                       登录
                     </button>
                     <button class="button text-light m-0 w-100" id="login-form-submit" name="login-form-submit"
-                      value="register" v-else>
+                      type="button" @click="login" v-else>
                       注册
                     </button>
                     <a href="#" class="text-smaller mt-1 d-block" @click.prevent="isRegistered = true"
@@ -219,10 +223,10 @@
           data: null,
           loginsuccess: false,
           user: {
-            userId: null,
-            username: null,
+            userId: '',
+            username: '',
             userType: 0,
-            userPassword: null
+            userPassword: ''
 
           },
           isRegistered: false,
@@ -232,25 +236,22 @@
         fetchData() {
 
         },
-        login(event) {
+        login() {
           console.log("login");
-          const url = this.isRegistered ? "http://localhost:8086/user/" : "http://localhost:8086/user/normal/login";
-          axios
-            .post(url, this.user, {
-              headers: {
-                'Content-Type': 'application/json'  // 设置请求头为 JSON 类型
-              }
-            })
+          const url = this.isRegistered ? "http://localhost:8086/user/" : "http://localhost:8086/user/normal_login/";
+          axios.post(url, this.user, {
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          })
             .then((response) => {
               console.log("login success", response);
               if (response.data) {
                 this.user = response.data;
                 localStorage.setItem("user", JSON.stringify(this.user));
-
               } else {
                 alert("登录失败,账号或密码错误");
               }
-
             })
             .catch((error) => {
               console.error("login failed", error);
@@ -258,7 +259,10 @@
         },
         loadStoredData() {
           // 从本地存储中读取数据
-          this.user = JSON.parse(localStorage.getItem("user"));
+          var user = JSON.parse(localStorage.getItem("user"));
+          if (user) {
+            this.user = user;
+          }
         },
       },
       mounted() {

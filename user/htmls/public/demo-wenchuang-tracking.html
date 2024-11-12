@@ -1,452 +1,371 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta http-equiv="x-ua-compatible" content="IE=edge" />
-    <meta name="author" content="SemiColonWeb" />
-    <meta
-      name="description"
-      content="Get Canvas to build powerful websites easily with the Highly Customizable &amp; Best Selling Bootstrap Template, today."
-    />
 
-    <!-- Font Imports -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@0;1&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="x-ua-compatible" content="IE=edge" />
+  <meta name="author" content="SemiColonWeb" />
+  <meta name="description"
+    content="Get Canvas to build powerful websites easily with the Highly Customizable &amp; Best Selling Bootstrap Template, today." />
 
-    <!-- Core Style -->
-    <link rel="stylesheet" href="http://127.0.0.1:8082/style.css" />
+  <!-- Font Imports -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@0;1&display=swap"
+    rel="stylesheet" />
 
-    <!-- Font Icons -->
-    <link rel="stylesheet" href="http://127.0.0.1:8082/css/font-icons.css" />
+  <!-- Core Style -->
+  <link rel="stylesheet" href="http://127.0.0.1:8082/style.css" />
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="http://127.0.0.1:8082/css/custom.css" />
+  <!-- Font Icons -->
+  <link rel="stylesheet" href="http://127.0.0.1:8082/css/font-icons.css" />
 
-    <!-- Font Imports -->
-    <link rel="stylesheet" href="https://use.typekit.net/aay8rzy.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="http://127.0.0.1:8082/css/custom.css" />
 
-    <!-- Core Style -->
-    <link rel="stylesheet" href="http://127.0.0.1:8082/style.css" />
+  <!-- Font Imports -->
+  <link rel="stylesheet" href="https://use.typekit.net/aay8rzy.css" />
 
-    <!-- Font Icons -->
-    <link rel="stylesheet" href="http://127.0.0.1:8082/css/font-icons.css" />
+  <!-- Core Style -->
+  <link rel="stylesheet" href="http://127.0.0.1:8082/style.css" />
 
-    <!-- Plugins/Components CSS -->
-    <link rel="stylesheet" href="http://127.0.0.1:8082/css/swiper.css" />
+  <!-- Font Icons -->
+  <link rel="stylesheet" href="http://127.0.0.1:8082/css/font-icons.css" />
 
-    <!-- Niche Demos -->
-    <link
-      rel="stylesheet"
-      href="http://127.0.0.1:8082/demos/skincare/skincare.css"
-    />
+  <!-- Plugins/Components CSS -->
+  <link rel="stylesheet" href="http://127.0.0.1:8082/css/swiper.css" />
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="http://127.0.0.1:8082/css/custom.css" />
+  <!-- Niche Demos -->
+  <link rel="stylesheet" href="http://127.0.0.1:8082/demos/skincare/skincare.css" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="http://127.0.0.1:8082/css/custom.css" />
 
-    <!-- Document Title
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Document Title
 	============================================= -->
-    <title>Steps - Order Tracking | Canvas</title>
+  <title>Steps - Order Tracking | Canvas</title>
 
-    <style>
-      .feature-box-border-vertical .feature-box {
-        position: relative;
-      }
+  <style>
+    .feature-box-border-vertical .feature-box {
+      position: relative;
+    }
 
-      .feature-box-border-vertical .feature-box:not(.noborder)::before,
-      .feature-box-border-vertical
-        .fbox-active.feature-box:not(.noborder)::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 35px;
-        width: 3px;
-        height: 100%;
-        background-color: var(--bs-gray-200);
-      }
+    .feature-box-border-vertical .feature-box:not(.noborder)::before,
+    .feature-box-border-vertical .fbox-active.feature-box:not(.noborder)::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 35px;
+      width: 3px;
+      height: 100%;
+      background-color: var(--bs-gray-200);
+    }
 
-      .feature-box-border-vertical .fbox-icon i,
-      .feature-box-border-vertical .fbox-border.fbox-light .fbox-icon i {
-        position: relative;
-        z-index: 5;
-        text-align: center;
-        box-shadow: 0 0 0 6px #fff;
-        border: 1px solid #eee;
-        background-color: #fff !important;
-      }
+    .feature-box-border-vertical .fbox-icon i,
+    .feature-box-border-vertical .fbox-border.fbox-light .fbox-icon i {
+      position: relative;
+      z-index: 5;
+      text-align: center;
+      box-shadow: 0 0 0 6px #fff;
+      border: 1px solid #eee;
+      background-color: #fff !important;
+    }
 
-      .feature-box-border-vertical .fbox-active.feature-box .fbox-icon i,
-      .feature-box-border-vertical
-        .fbox-active.feature-box
-        .fbox-border.fbox-light
-        .fbox-icon
-        i,
-      .feature-box-border-vertical
-        .fbox-active.feature-box:not(.noborder)::after {
-        background-color: var(--bs-primary) !important;
-        border-color: transparent !important;
-        color: #fff;
-      }
+    .feature-box-border-vertical .fbox-active.feature-box .fbox-icon i,
+    .feature-box-border-vertical .fbox-active.feature-box .fbox-border.fbox-light .fbox-icon i,
+    .feature-box-border-vertical .fbox-active.feature-box:not(.noborder)::after {
+      background-color: var(--bs-primary) !important;
+      border-color: transparent !important;
+      color: #fff;
+    }
 
-      .dark .feature-box-border-vertical .feature-box:not(.noborder)::before,
-      .dark
-        .feature-box-border-vertical
-        .fbox-active.feature-box:not(.noborder)::after {
-        background-color: var(--bs-gray-600);
-      }
+    .dark .feature-box-border-vertical .feature-box:not(.noborder)::before,
+    .dark .feature-box-border-vertical .fbox-active.feature-box:not(.noborder)::after {
+      background-color: var(--bs-gray-600);
+    }
 
-      .dark .feature-box-border-vertical .fbox-icon i,
-      .dark .feature-box-border-vertical .fbox-border.fbox-light .fbox-icon i {
-        box-shadow: 0 0 0 6px var(--bs-dark);
-        background-color: var(--bs-dark) !important;
-        color: var(--bs-gray-600);
-        border-color: var(--bs-gray-600);
-      }
+    .dark .feature-box-border-vertical .fbox-icon i,
+    .dark .feature-box-border-vertical .fbox-border.fbox-light .fbox-icon i {
+      box-shadow: 0 0 0 6px var(--bs-dark);
+      background-color: var(--bs-dark) !important;
+      color: var(--bs-gray-600);
+      border-color: var(--bs-gray-600);
+    }
 
-      .dark .feature-box-border-vertical .fbox-active.feature-box .fbox-icon i,
-      .dark
-        .feature-box-border-vertical
-        .fbox-active.feature-box
-        .fbox-border.fbox-light
-        .fbox-icon
-        i,
-      .dark
-        .feature-box-border-vertical
-        .fbox-active.feature-box:not(.noborder)::after {
-        background-color: var(--bs-warning) !important;
-        color: var(--bs-dark);
-      }
-    </style>
-  </head>
+    .dark .feature-box-border-vertical .fbox-active.feature-box .fbox-icon i,
+    .dark .feature-box-border-vertical .fbox-active.feature-box .fbox-border.fbox-light .fbox-icon i,
+    .dark .feature-box-border-vertical .fbox-active.feature-box:not(.noborder)::after {
+      background-color: var(--bs-warning) !important;
+      color: var(--bs-dark);
+    }
+  </style>
+</head>
 
-  <body class="stretched">
-    <!-- Document Wrapper
+<body class="stretched">
+  <!-- Document Wrapper
 	============================================= -->
 
-    <!-- Header
+  <!-- Header
 		============================================= -->
-    <header
-      id="header"
-      class="header-size-sm"
-      data-sticky-shrink="false"
-      style="border-color: var(--cnvs-color)"
-    >
-      <div class="container">
-        <div class="header-row justify-content-lg-between">
-          <nav
-            class="primary-menu top-primary-menu col-lg-5 order-last order-lg-first mobile-menu-off-canvas"
-          >
-            <ul class="menu-container">
-              <li class="menu-item">
-                <a class="menu-link" href="demo-wenchuang.html"
-                  ><div>主页</div></a
-                >
-              </li>
-              <li class="menu-item">
-                <a class="menu-link" href="demo-wenchuang-shop.html"
-                  ><div>产品</div></a
-                >
-              </li>
-              <li class="menu-item">
-                <a class="menu-link" href="demo-wenchuang-cart.html"
-                  ><div>购物车</div></a
-                >
-              </li>
-            </ul>
-          </nav>
-          <!-- #primary-menu end -->
+  <header id="header" class="header-size-sm" data-sticky-shrink="false" style="border-color: var(--cnvs-color)">
+    <div class="container">
+      <div class="header-row justify-content-lg-between">
+        <nav class="primary-menu top-primary-menu col-lg-5 order-last order-lg-first mobile-menu-off-canvas">
+          <ul class="menu-container">
+            <li class="menu-item">
+              <a class="menu-link" href="demo-wenchuang.html">
+                <div>主页</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="demo-wenchuang-shop.html">
+                <div>产品</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="demo-wenchuang-cart.html">
+                <div>购物车</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="demo-wenchuang-checkout.html">
+                <div>订单</div>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- #primary-menu end -->
 
-          <!-- Logo
+        <!-- Logo
 					============================================= -->
-          <div id="logo" class="mx-lg-auto col-lg-2 justify-content-center">
-            <a class="color fst-italic" href="#">文创商城</a>
-          </div>
-          <!-- #logo end -->
-
-          <div class="col-lg-5 d-flex justify-content-end">
-            <div class="header-misc">
-              <!-- #primary-menu end -->
-
-              <div class="primary-menu-trigger" data-target=".top-primary-menu">
-                <button
-                  class="cnvs-hamburger"
-                  type="button"
-                  title="Open Mobile Menu"
-                >
-                  <span class="cnvs-hamburger-box"
-                    ><span class="cnvs-hamburger-inner"></span
-                  ></span>
-                </button>
-              </div>
-
-              <!-- Top Account
-							============================================= -->
-              <div class="header-misc-icon me-lg-4">
-                <a href="demo-wenchuang-login.html"
-                  ><i class="bi-person-circle"></i
-                ></a>
-              </div>
-              <!-- top-Account end -->
-
-              <!-- Top Cart
-							============================================= -->
-              <div id="top-cart" class="header-misc-icon me-lg-4">
-                <a href="#" id="top-cart-trigger"><i class="bi-basket"></i></a>
-                <div class="top-cart-content">
-                  <div class="top-cart-title">
-                    <h4 class="ls-0 text-transform-none">Shopping Cart</h4>
-                  </div>
-                  <div class="top-cart-items">
-                    <div class="top-cart-item">
-                      <div class="top-cart-item-image position-relative">
-                        <a href="demo-wenchuang-single.html"
-                          ><img
-                            src="http://127.0.0.1:8082/demos/skincare/images/products/13.jpg"
-                            alt="Blue Shoulder Bag"
-                        /></a>
-                        <span
-                          class="position-absolute top-0 start-0 translate-middle bg-danger rounded-circle lh-1 border border-white text-white square square-xs text-center"
-                        >
-                          <span class="visually-hidden">Remove </span>&times;
-                        </span>
-                      </div>
-                      <div class="top-cart-item-desc">
-                        <div class="top-cart-item-desc-title">
-                          <a href="demo-wenchuang-single.html" class="fw-normal"
-                            >Âimtze Cream &amp; Lotions</a
-                          >
-                          <span class="top-cart-item-price d-block"
-                            >$29.99</span
-                          >
-                        </div>
-                        <div class="top-cart-item-quantity">x 1</div>
-                      </div>
-                    </div>
-                    <div class="top-cart-item border-default">
-                      <div class="top-cart-item-image position-relative">
-                        <a href="demo-wenchuang-single.html"
-                          ><img
-                            src="http://127.0.0.1:8082/demos/skincare/images/products/11.jpg"
-                            alt="Blue Shoulder Bag"
-                        /></a>
-                        <span
-                          class="position-absolute top-0 start-0 translate-middle bg-danger rounded-circle lh-1 border border-white text-white square square-xs text-center"
-                        >
-                          <span class="visually-hidden">Remove </span>&times;
-                        </span>
-                      </div>
-                      <div class="top-cart-item-desc">
-                        <div class="top-cart-item-desc-title">
-                          <a href="demo-wenchuang-single.html" class="fw-normal"
-                            >Clove Super Serum</a
-                          >
-                          <span class="top-cart-item-price d-block"
-                            >$12.49</span
-                          >
-                        </div>
-                        <div class="top-cart-item-quantity">x 2</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="top-cart-action border-default">
-                    <a
-                      href="demo-wenchuang-cart.html"
-                      class="button button-small m-0"
-                      >View Cart</a
-                    >
-                    <span class="top-checkout-price">$54.97</span>
-                  </div>
-                </div>
-              </div>
-              <!-- #top-cart end -->
-
-              <!-- Top Search
-							============================================= -->
-              <div id="top-search" class="header-misc-icon">
-                <a href="#" id="top-search-trigger"
-                  ><i class="uil uil-search"></i><i class="bi-x-lg"></i
-                ></a>
-              </div>
-              <!-- #top-search end -->
-            </div>
-          </div>
-
-          <form class="top-search-form" action="search.html" method="get">
-            <input
-              type="text"
-              name="q"
-              class="form-control"
-              value=""
-              placeholder="Type &amp; Hit Enter.."
-              autocomplete="off"
-            />
-          </form>
+        <div id="logo" class="mx-lg-auto col-lg-2 justify-content-center">
+          <a class="color fst-italic" href="#">文创商城</a>
         </div>
-      </div>
+        <!-- #logo end -->
 
-      <div id="header-wrap">
-        <div class="container">
-          <div class="header-row">
-            <div
-              class="primary-menu-trigger justify-content-start"
-              data-target=".main-primary-menu"
-            >
-              <button
-                class="cnvs-hamburger"
-                type="button"
-                title="Open Mobile Menu"
-              >
-                <span class="cnvs-hamburger-box"
-                  ><span class="cnvs-hamburger-inner"></span
-                ></span>
+        <div class="col-lg-5 d-flex justify-content-end">
+          <div class="header-misc">
+            <!-- #primary-menu end -->
+
+            <div class="primary-menu-trigger" data-target=".top-primary-menu">
+              <button class="cnvs-hamburger" type="button" title="Open Mobile Menu">
+                <span class="cnvs-hamburger-box"><span class="cnvs-hamburger-inner"></span></span>
               </button>
             </div>
 
-            <!-- #primary-menu end -->
+            <!-- Top Account
+							============================================= -->
+            <div class="header-misc-icon me-lg-4">
+              <a href="demo-wenchuang-login.html"><i class="bi-person-circle"></i></a>
+            </div>
+            <!-- top-Account end -->
+
+            <!-- Top Cart
+							============================================= -->
+            <div id="top-cart" class="header-misc-icon me-lg-4">
+              <a href="#" id="top-cart-trigger"><i class="bi-basket"></i></a>
+              <div class="top-cart-content">
+                <div class="top-cart-title">
+                  <h4 class="ls-0 text-transform-none">Shopping Cart</h4>
+                </div>
+                <div class="top-cart-items">
+                  <div class="top-cart-item">
+                    <div class="top-cart-item-image position-relative">
+                      <a href="demo-wenchuang-single.html"><img
+                          src="http://127.0.0.1:8082/demos/skincare/images/products/13.jpg"
+                          alt="Blue Shoulder Bag" /></a>
+                      <span
+                        class="position-absolute top-0 start-0 translate-middle bg-danger rounded-circle lh-1 border border-white text-white square square-xs text-center">
+                        <span class="visually-hidden">Remove </span>&times;
+                      </span>
+                    </div>
+                    <div class="top-cart-item-desc">
+                      <div class="top-cart-item-desc-title">
+                        <a href="demo-wenchuang-single.html" class="fw-normal">Âimtze Cream &amp; Lotions</a>
+                        <span class="top-cart-item-price d-block">$29.99</span>
+                      </div>
+                      <div class="top-cart-item-quantity">x 1</div>
+                    </div>
+                  </div>
+                  <div class="top-cart-item border-default">
+                    <div class="top-cart-item-image position-relative">
+                      <a href="demo-wenchuang-single.html"><img
+                          src="http://127.0.0.1:8082/demos/skincare/images/products/11.jpg"
+                          alt="Blue Shoulder Bag" /></a>
+                      <span
+                        class="position-absolute top-0 start-0 translate-middle bg-danger rounded-circle lh-1 border border-white text-white square square-xs text-center">
+                        <span class="visually-hidden">Remove </span>&times;
+                      </span>
+                    </div>
+                    <div class="top-cart-item-desc">
+                      <div class="top-cart-item-desc-title">
+                        <a href="demo-wenchuang-single.html" class="fw-normal">Clove Super Serum</a>
+                        <span class="top-cart-item-price d-block">$12.49</span>
+                      </div>
+                      <div class="top-cart-item-quantity">x 2</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="top-cart-action border-default">
+                  <a href="demo-wenchuang-cart.html" class="button button-small m-0">View Cart</a>
+                  <span class="top-checkout-price">$54.97</span>
+                </div>
+              </div>
+            </div>
+            <!-- #top-cart end -->
+
+            <!-- Top Search
+							============================================= -->
+            <div id="top-search" class="header-misc-icon">
+              <a href="#" id="top-search-trigger"><i class="uil uil-search"></i><i class="bi-x-lg"></i></a>
+            </div>
+            <!-- #top-search end -->
           </div>
         </div>
+
+        <form class="top-search-form" action="search.html" method="get">
+          <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter.."
+            autocomplete="off" />
+        </form>
       </div>
-      <div class="header-wrap-clone"></div>
-    </header>
-    <!-- #header end -->
+    </div>
 
-    <div id="wrapper">
-      <!-- Content
+    <div id="header-wrap">
+      <div class="container">
+        <div class="header-row">
+          <div class="primary-menu-trigger justify-content-start" data-target=".main-primary-menu">
+            <button class="cnvs-hamburger" type="button" title="Open Mobile Menu">
+              <span class="cnvs-hamburger-box"><span class="cnvs-hamburger-inner"></span></span>
+            </button>
+          </div>
+
+          <!-- #primary-menu end -->
+        </div>
+      </div>
+    </div>
+    <div class="header-wrap-clone"></div>
+  </header>
+  <!-- #header end -->
+
+  <div id="wrapper">
+    <!-- Content
 		============================================= -->
-      <section id="content">
-        <div class="content-wrap py-0">
-          <div class="row min-vh-100">
-            <!-- .bg-white -->
-            <div class="col-lg-12 bg-white py-6">
-              <div class="container">
-                <h2 class="text-center mb-6">付款成功!</h2>
-                <div
-                  class="row feature-box-border-vertical col-mb-50 justify-content-center align-items-center my-5"
-                >
-                  <div
-                    class="col-md-8 feature-box fbox-active fbox-dark fbox-sm"
-                  >
-                    <div class="fbox-icon">
-                      <i class="fa-solid fa-check"></i>
-                    </div>
-                    <div class="fbox-content">
-                      <h3 class="text-transform-none mb-2">客户已下单</h3>
-                      <p>Mumbai, MH, IND - Sep 11th, 9:05am</p>
-                    </div>
+    <section id="content">
+      <div class="content-wrap py-0">
+        <div class="row min-vh-100">
+          <!-- .bg-white -->
+          <div class="col-lg-12 bg-white py-6">
+            <div class="container">
+              <h2 class="text-center mb-6">付款成功!</h2>
+              <div class="row feature-box-border-vertical col-mb-50 justify-content-center align-items-center my-5">
+                <div class="col-md-8 feature-box fbox-active fbox-dark fbox-sm">
+                  <div class="fbox-icon">
+                    <i class="fa-solid fa-check"></i>
                   </div>
-
-                  <div class="clear"></div>
-
-                  <div
-                    class="col-md-8 feature-box fbox-active fbox-border fbox-light fbox-sm"
-                  >
-                    <div class="fbox-icon">
-                      <i class="fa-solid fa-check border"></i>
-                    </div>
-                    <div class="fbox-content">
-                      <h3 class="text-transform-none mb-2">处理订单</h3>
-                      <p>Mumbai, MH, IND - Sep 12th, 04:05pm</p>
-                    </div>
+                  <div class="fbox-content">
+                    <h3 class="text-transform-none mb-2">客户已下单</h3>
+                    <p> {{tracking.updatedAt}}</p>
                   </div>
+                </div>
 
-                  <div class="clear"></div>
+                <div class="clear"></div>
 
-                  <div
-                    class="col-md-8 feature-box fbox-active fbox-border fbox-light fbox-sm"
-                  >
-                    <div class="fbox-icon">
-                      <i class="fa-solid fa-check border"></i>
-                    </div>
-                    <div class="fbox-content">
-                      <h3 class="text-transform-none mb-2">已发货</h3>
-                      <p>Mumbai, MH, IND - Sep 12th, 09:33pm</p>
-                      <p class="mb-3">
-                        Completely mesh standardized expertise after synergistic
-                        architectures. Professionally promote one-to-one value.
-                      </p>
-                      <a href="#" class="link-primary"
-                        ><u>See more details</u></a
-                      >
-                    </div>
+                <div class="col-md-8 feature-box fbox-active fbox-border fbox-light fbox-sm">
+                  <div class="fbox-icon">
+                    <i class="fa-solid fa-check border"></i>
                   </div>
-
-                  <div class="clear"></div>
-
-                  <div
-                    class="col-md-8 feature-box fbox-border fbox-light fbox-sm"
-                  >
-                    <div class="fbox-icon">
-                      <i class="fa-solid fa-check"></i>
-                    </div>
-                    <div class="fbox-content">
-                      <h3 class="text-transform-none mb-2">包裹将派送</h3>
-                    </div>
+                  <div class="fbox-content">
+                    <h3 class="text-transform-none mb-2">处理订单</h3>
+                    <p>{{tracking.updatedAt}}</p>
                   </div>
+                </div>
 
-                  <div class="clear"></div>
+                <div class="clear"></div>
 
-                  <div
-                    class="col-md-8 feature-box pb-0 fbox-border fbox-light noborder fbox-sm"
-                  >
-                    <div class="fbox-icon">
-                      <i class="fa-solid fa-check"></i>
-                    </div>
-                    <div class="fbox-content">
-                      <h3 class="text-transform-none mb-0">已签收</h3>
-                    </div>
+                <div class="col-md-8 feature-box fbox-active fbox-border fbox-light fbox-sm">
+                  <div class="fbox-icon">
+                    <i class="fa-solid fa-check border"></i>
+                  </div>
+                  <div class="fbox-content">
+                    <h3 class="text-transform-none mb-2">已发货</h3>
+                    <p>{{tracking.updatedAt}}</p>
+                    <p class="mb-3">
+                      {{tracking.receiveProvince}}省{{tracking.receiveCity}}市{{tracking.receiveDetailAddress}}
+                    </p>
+                    <a href="#" class="link-primary"><u>See more details</u></a>
+                  </div>
+                </div>
+                
+                <div class="clear"></div>
+
+                <div class="col-md-8 feature-box fbox-active fbox-border fbox-light fbox-sm">
+                  <div class="fbox-icon">
+                    <i class="fa-solid fa-check border"></i>
+                  </div>
+                  <div class="fbox-content">
+                    <h3 class="text-transform-none mb-2">包裹将派送</h3>
+                  </div>
+                </div>
+
+                <div class="clear"></div>
+
+                <div class="col-md-8 feature-box fbox-active fbox-border fbox-light fbox-sm">
+                  <div class="fbox-icon">
+                    <i class="fa-solid fa-check border"></i>
+                  </div>
+                  <div class="fbox-content">
+                    <h3 class="text-transform-none mb-0">已签收</h3>
+                    <p class="mb-3">
+                      签收人: {{tracking.firstname}} {{tracking.lastname}}
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <!-- #content end -->
-    </div>
-    <!-- #wrapper end -->
+      </div>
+    </section>
+    <!-- #content end -->
+  </div>
+  <!-- #wrapper end -->
 
-    <!-- Go To Top
+  <!-- Go To Top
 	============================================= -->
-    <div id="gotoTop" class="uil uil-angle-up"></div>
+  <div id="gotoTop" class="uil uil-angle-up"></div>
 
-    <!-- JavaScripts
+  <!-- JavaScripts
 	============================================= -->
-    <script src="http://127.0.0.1:8082/js/plugins.min.js"></script>
-    <script src="http://127.0.0.1:8082/js/functions.bundle.js"></script>
-    <!-- 引入 Vue 和 Axios -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script>
-      // Vue 3 中使用 createApp 方法创建应用实例
-      const app = Vue.createApp({
-        data() {
-          return {
-            message: "Hello Vue 3!",
-            data: null,
-          };
+  <script src="http://127.0.0.1:8082/js/plugins.min.js"></script>
+  <script src="http://127.0.0.1:8082/js/functions.bundle.js"></script>
+  <!-- 引入 Vue 和 Axios -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    // Vue 3 中使用 createApp 方法创建应用实例
+    const app = Vue.createApp({
+      data() {
+        return {
+          tracking: {}
+        };
+      },
+      mounted() {
+        this.fetchData();
+      },
+      methods: {
+        fetchData() {
+          this.tracking = JSON.parse(localStorage.getItem("tracking"));
+          console.log(this.tracking );
         },
-        methods: {
-          fetchData() {
-            // 使用 Axios 请求后端 API
-            axios
-              .get("https://jsonplaceholder.typicode.com/posts/1")
-              .then((response) => {
-                this.data = response.data;
-              })
-              .catch((error) => {
-                console.error("请求失败", error);
-              });
-          },
-        },
-      });
+      },
+    });
 
-      // 挂载到 DOM 元素上
-      app.mount("#wrapper");
-    </script>
-  </body>
+    // 挂载到 DOM 元素上
+    app.mount("#wrapper");
+  </script>
+</body>
+
 </html>

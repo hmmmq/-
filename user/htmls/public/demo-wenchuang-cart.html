@@ -61,6 +61,11 @@
                   <div>购物车</div>
                 </a>
               </li>
+              <li class="menu-item">
+                <a class="menu-link" href="demo-wenchuang-checkout.html">
+                  <div>订单</div>
+                </a>
+              </li>
             </ul>
           </nav>
           <!-- #primary-menu end -->
@@ -332,6 +337,7 @@
           }
 
           try {
+            console.log("step1");
             // Step 1: Prepare the order data (you can get this from your frontend application ståate)
             const orderData = {
           
@@ -342,6 +348,7 @@
               statusCode: 1,
            
             };
+            console.log("step2");
 
             // Step 2: Create the order by sending a POST request to /order
             const orderResponse = await axios.post('http://localhost:8086/order', orderData);
@@ -349,7 +356,10 @@
               throw new Error('Failed to create order');
               return;
             }
-            const orderId = orderResponse.data; // Assuming the API returns the orderId
+
+            console.log("step3");
+            console.log("orderResponse",orderResponse);
+            const orderId = orderResponse.data.orderId; // Assuming the API returns the orderId
 
             
             const orderItems = this.cartlist.map(item => ({
@@ -374,6 +384,13 @@
             await axios.delete(`http://localhost:8086/cart/user/${user.userId}`); 
             // Notify the user or update the UI accordingly
             console.log('Order created successfully!');
+
+            //save
+            localStorage.setItem('orderItems', JSON.stringify(orderItems));
+            localStorage.setItem('order',JSON.stringify(orderResponse.data));
+            console.log(orderResponse);
+            console.log(this.totalPrice);
+            localStorage.setItem('totalPrice',this.totalPrice);
 
                // Redirect to the single checkout page
           window.location.href = 'demo-wenchuang-checkout.html';

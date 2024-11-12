@@ -33,8 +33,8 @@ public class UserController {
         }
     }
 
-    @PostMapping("/normal/login")
-    public User normallogin(@RequestBody User user) {
+    @PostMapping("/normal_login")
+    public User normal_login(@RequestBody User user) {
         User userById = getUserById(user.getUserId());
         if (userById != null && userById.getUserPassword().equals(user.getUserPassword())) {
             return userById;

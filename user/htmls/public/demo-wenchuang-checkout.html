@@ -82,6 +82,11 @@
                   <div>购物车</div>
                 </a>
               </li>
+              <li class="menu-item">
+                <a class="menu-link" href="demo-wenchuang-checkout.html">
+                  <div>订单</div>
+                </a>
+              </li>
             </ul>
           </nav>
           <!-- #primary-menu end -->
@@ -114,7 +119,7 @@
 							  ============================================= -->
               <div id="top-cart" class="header-misc-icon me-lg-4">
                 <a href="#" id="top-cart-trigger"><i class="bi-basket"></i></a>
-          
+
               </div>
               <!-- #top-cart end -->
 
@@ -172,24 +177,27 @@
                   </div>
                   <div class="col-md-6 form-group">
                     <label for="billing-form-name">名:</label>
-                    <input type="text" id="billing-form-name" name="billing-form-name" v-model="order.firstname" class="form-control" />
+                    <input type="text" id="billing-form-name" name="billing-form-name" v-model="order.firstname"
+                      class="form-control" />
                   </div>
 
                   <div class="w-100"></div>
 
                   <div class="col-12 form-group">
                     <label for="billing-form-address">地址:</label>
-                    <input type="text" id="billing-form-address" name="billing-form-address" v-model="order.receiveDetailAddress"
-                      class="form-control" />
+                    <input type="text" id="billing-form-address" name="billing-form-address"
+                      v-model="order.receiveDetailAddress" class="form-control" />
                   </div>
 
                   <div class="col-12 form-group">
                     <label for="billing-form-city">城市 </label>
-                    <input type="text" id="billing-form-city" name="billing-form-city" v-model="order.receiveCity" class="form-control" />
+                    <input type="text" id="billing-form-city" name="billing-form-city" v-model="order.receiveCity"
+                      class="form-control" />
                   </div>
                   <div class="col-12 form-group">
                     <label for="billing-form-city">省份 </label>
-                    <input type="text" id="billing-form-city" name="billing-form-city" v-model="order.receiveProvince" class="form-control" />
+                    <input type="text" id="billing-form-city" name="billing-form-city" v-model="order.receiveProvince"
+                      class="form-control" />
                   </div>
 
                   <div class="col-md-6 form-group">
@@ -231,7 +239,7 @@
                         </td>
 
                         <td class="cart-product-subtotal">
-                          <span class="amount"> {{ item.amount  }}</span>
+                          <span class="amount"> {{ item.amount }}</span>
                         </td>
                       </tr>
 
@@ -252,7 +260,7 @@
                         </td>
 
                         <td class="border-top-0 cart-product-name">
-                          <span class="amount">{{totalPrice}}</span>
+                          <span class="amount">{{this.totalPrice}}</span>
                         </td>
                       </tr>
                       <tr class="cart_item">
@@ -279,10 +287,10 @@
 
                 <div class="accordion">
                   <div class="accordion-header">
-                    <div class="accordion-icon">
+                      <div class="accordion-icon">
                       <i class="accordion-closed uil uil-minus"></i>
                       <i class="accordion-open bi-check-lg"></i>
-                    </div>
+                      </div>
                     <div class="accordion-title">支付宝支付</div>
                   </div>
                   <div class="accordion-content">推荐使用支付宝支付</div>
@@ -306,7 +314,7 @@
                   <div class="accordion-content">推荐使用银联支付</div>
                 </div>
                 <div class="d-flex justify-content-end">
-                  <a href="demo-wenchuang-tracking.html" class="button button-3d">支付订单</a>
+                  <a href="#" class="button button-3d" @click="payOrder">支付订单</a>
                 </div>
               </div>
             </div>
@@ -346,11 +354,33 @@
       }
       ,
       methods: {
+        async payOrder(){
+          this.order.statusName = '已支付';
+          this.order.statusCode = 2;
+          //添加时间
+          this.order.createdAt = new Date().toISOString();
+          this.order.updatedAt = new Date().toISOString();
+          const response = await axios.put('http://localhost:8086/order/'+this.order.orderId,this.order);
+          if(response.data){
+            alert("支付成功!");
+            localStorage.setItem('tracking',JSON.stringify(this.order));
+            localStorage.removeItem('order');
+            localStorage.removeItem('orderItems');
+            localStorage.removeItem('totalPrice');
+            console.log("tracking");
+            
 
+            window.location.href = "demo-wenchuang-tracking.html";
+          }else{
+            alert("支付失败");
+
+          }
+        },
         fetchData() {
           this.order = JSON.parse(localStorage.getItem("order"));
           this.orderItems = JSON.parse(localStorage.getItem("orderItems"));
           this.totalPrice = localStorage.getItem("totalPrice");
+          
         },
       },
     });
