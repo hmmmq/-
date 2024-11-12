@@ -1,10 +1,10 @@
 package com.example.demo.controller;
 
-import com.example.demo.entity.Order;
-import com.example.demo.service.IOrderService;
+import cn.hutool.db.sql.Order;
+import com.example.demo.entity.Userorder;
+import com.example.demo.service.IUserorderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.stereotype.Controller;
 
 import java.util.List;
 
@@ -16,47 +16,50 @@ import java.util.List;
  * @author demo
  * @since 2024-09-12
  */
-@Controller
+@RestController
 @RequestMapping("/order")
 public class OrderController {
     @Autowired
-    private IOrderService OrderService;
+    private IUserorderService OrderService;
 
     // Create a new Order
     @PostMapping
-    public boolean createOrder(@RequestBody Order Order) {
-        Order temp  = getOrderById(Order.getOrderId());
-        if (temp != null) {
-            return false;
-        }
+    public Userorder createOrder(@RequestBody Userorder Userorder) {
 
-        return OrderService.save(Order);
+        System.out.printf("Order");
+        System.out.println(Userorder.getTotalPrice());
+        boolean save = OrderService.save(Userorder);
+        if (save){
+            return Userorder;
+        }else{
+            return null;
+        }
     }
 
     // Get a Order by ID
     @GetMapping("/{id}")
-    public Order getOrderById(@PathVariable Integer id) {
+    public Userorder getOrderById(@PathVariable Integer id) {
         return OrderService.getById(id);
     }
 
     // Get all Orders
     @GetMapping
-    public List<Order> getAllOrders() {
+    public List<Userorder> getAllOrders() {
         return OrderService.list();
     }
 
     @GetMapping("/user/{id}")
-    public List<Order> getUserAllOrders(@PathVariable Integer id) {
-        List<Order> Orders = getAllOrders();
-        Orders.removeIf(Order -> !Order.getUserId().equals(id));
-        return Orders;
+    public List<Userorder> getUserAllOrders(@PathVariable Integer id) {
+        List<Userorder> userorders = getAllOrders();
+        userorders.removeIf(Userorder -> !Userorder.getUserId().equals(id));
+        return userorders;
     }
 
     // Update an existing Order
     @PutMapping("/{id}")
-    public boolean updateOrder(@PathVariable Integer id, @RequestBody Order Order) {
-        Order.setOrderId(id);
-        return OrderService.updateById(Order);
+    public boolean updateOrder(@PathVariable Integer id, @RequestBody Userorder Userorder) {
+        Userorder.setOrderId(id);
+        return OrderService.updateById(Userorder);
     }
 
     // Delete a Order by ID

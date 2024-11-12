@@ -57,4 +57,17 @@ public class CartController {
     public boolean deleteCart(@PathVariable Integer id) {
         return cartService.removeById(id);
     }
+    @DeleteMapping("/user/{id}")
+    public boolean deleteUserCart(@PathVariable Integer id) {
+        List<Cart> userAllCarts = getUserAllCarts(id);
+        if (userAllCarts.isEmpty()){
+            return true;
+        }
+        for (Cart cart: userAllCarts){
+            cartService.removeById(cart.getCartId());
+        }
+        return  true;
+    }
+
+
 }

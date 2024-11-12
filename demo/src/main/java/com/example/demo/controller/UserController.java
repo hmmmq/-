@@ -26,6 +26,16 @@ public class UserController {
     @PostMapping("/login")
     public User login(@RequestBody User user) {
         User userById = getUserById(user.getUserId());
+        if (userById != null && userById.getUserPassword().equals(user.getUserPassword()) && userById.getUserType().equals(1)) {
+            return userById;
+        }else {
+            return null;
+        }
+    }
+
+    @PostMapping("/normal/login")
+    public User normallogin(@RequestBody User user) {
+        User userById = getUserById(user.getUserId());
         if (userById != null && userById.getUserPassword().equals(user.getUserPassword())) {
             return userById;
         }else {

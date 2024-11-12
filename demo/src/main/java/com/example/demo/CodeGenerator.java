@@ -18,7 +18,7 @@ import java.util.List;
 public class CodeGenerator {
 
     public static void main(String[] args) {
-        FastAutoGenerator.create("jdbc:mysql://localhost:3306/culturalcreativemalldb", "root", "123")
+        FastAutoGenerator.create("jdbc:mysql://localhost:3306/culturalcreativemalldb", "root", "12345678")
                 // 全局配置
                 .globalConfig((scanner, builder) -> builder.author(scanner.apply("请输入作者名称？")))
                 // 包配置

@@ -1,0 +1,66 @@
+{
+  "name": "my-vue-project",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "bootstrap": "^5.3.3",
+    "core-js": "^3.8.3",
+    "datatables.net-bs4": "^2.1.8",
+    "datatables.net-bs5": "^2.1.8",
+    "datatables.net-buttons": "^3.1.2",
+    "datatables.net-buttons-bs4": "^3.1.2",
+    "datatables.net-dt": "^2.1.8",
+    "datatables.net-select": "^2.1.0",
+    "datatables.net-vue3": "^3.0.2",
+    "dropzone": "^6.0.0-beta.2",
+    "echarts": "^5.5.1",
+    "file-saver": "^2.0.5",
+    "jquery": "^3.7.1",
+    "jspdf": "^2.5.2",
+    "jspdf-autotable": "^3.8.4",
+    "jszip": "^3.10.1",
+    "pdfmake-support-chinese-fonts": "^1.0.3",
+    "popper.js": "^1.16.1",
+    "simplebar-vue": "^2.3.5",
+    "vue": "^3.2.13",
+    "vue-good-table": "^2.21.11",
+    "vue-router": "^4.4.3",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@types/bootstrap": "^5.2.10",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^8.0.3"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "@babel/eslint-parser"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
+}

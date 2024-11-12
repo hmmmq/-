@@ -16,7 +16,7 @@ import java.util.List;
  * @author demo
  * @since 2024-09-12
  */
-@Controller
+@RestController
 @RequestMapping("/violation")
 public class ViolationController {
     @Autowired

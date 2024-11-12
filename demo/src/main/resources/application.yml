@@ -11,7 +11,8 @@ spring:
     url: jdbc:mysql://localhost:3306/culturalcreativemalldb?useSSL=false&serverTimezone=UTC
     username: root
     password: 12345678
-
+#  resources:
+#    static-locations: classpath:/static/, classpath:/public/
 mybatis-plus:
   mapper-locations: classpath*:com/example/mapper/xml/*.xml
   # 实体扫描，多个 package 用逗号或者分号分隔
@@ -34,3 +35,5 @@ mybatis-plus:
     call-setters-on-nulls: true
     # springboot 项目 mybatis plus 设置 jdbcTypeForNull (oracle 数据库需配置 JdbcType.NULL, 默认是 Other)
     jdbc-type-for-null: 'null'
+upload:
+  path: src/main/resources/static/image

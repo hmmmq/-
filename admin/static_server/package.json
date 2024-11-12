@@ -1,0 +1,16 @@
+{
+  "name": "static_server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "http-server public -p 8083 --cors"
+  },
+  "devDependencies": {
+    "http-server": "^0.12.3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
